@@ -51,7 +51,7 @@ class TreeView extends Component
         <button id = "updateTree"
                 onClick = { this.updateTree }
                 style = { updateBtnStyle } />
-      </ div>
+      </div>
     );
   }
 }
