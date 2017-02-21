@@ -1,0 +1,22 @@
+{
+	"name": "Media Panel",
+	"short_name": "Media",
+	"version": "1.0",
+	"minimum_chrome_version": "10.0",
+	"devtools_page": "devtools.html",
+	"description": "Devtools panel that displays information about media",
+	"icons": {
+    	"48": "images/icon-48.png",
+		"96": "images/icon-96.png"
+  	},
+	"background": {
+		"scripts": [ "background.js" ]
+	},
+	"permissions": [
+		"tabs",
+		"<all_urls>",
+		"activeTab",
+		"debugger"
+	],
+	"manifest_version": 2
+}
