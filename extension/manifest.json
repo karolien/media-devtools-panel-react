@@ -2,7 +2,12 @@
 	"name": "Media Panel",
 	"short_name": "Media",
 	"version": "1.0",
-	"minimum_chrome_version": "10.0",
+  "author": "Karolien Koorts",
+  "applications": {
+    "gecko": {
+      "strict_min_version": "54.0"
+    }
+  },
 	"devtools_page": "devtools.html",
 	"description": "Devtools panel that displays information about media",
 	"icons": {

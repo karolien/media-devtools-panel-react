@@ -70,8 +70,17 @@
       if ("mozRequestDebugInfo" in v) {
         const waitForMediaElementInfo =
           v.mozRequestDebugInfo().then(debugInfo => {
-            debugInfo = debugInfo.replace(/\t/g, '  ').split(/\n/g);
-            mediaElementInfo.debugInfo = debugInfo.slice(0,debugInfo.length-1);
+            // Remove tabs temporarily
+            debugInfo = debugInfo.replace(/\t/g, '').split(/\n/g);
+            
+            var JSONDebugInfo = "{";
+            for(let g =0; g<debugInfo.length-1; g++){
+              var pair = debugInfo[g].split(": ");
+              JSONDebugInfo += '"' + pair[0] + '":"' + pair[1] + '",';
+            }
+            JSONDebugInfo = JSONDebugInfo.slice(0,JSONDebugInfo.length-1);
+            JSONDebugInfo += "}";
+            mediaElementInfo.debugInfo = JSON.parse(JSONDebugInfo);
           });
 
         waitForMediaElements.push(waitForMediaElementInfo);
@@ -79,6 +88,7 @@
         // backward compatibility.
         // NOTE: I'm not sure that this is still needed.
         mediaElementInfo.debugInfo = v.mozDebugReaderData;
+
       }
     }
 
