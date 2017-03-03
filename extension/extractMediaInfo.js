@@ -70,7 +70,6 @@
       if ("mozRequestDebugInfo" in v) {
         const waitForMediaElementInfo =
           v.mozRequestDebugInfo().then(debugInfo => {
-            // Remove tabs temporarily
             debugInfo = debugInfo.replace(/\t/g, '').split(/\n/g);
             
             var JSONDebugInfo = "{";
