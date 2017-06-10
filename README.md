@@ -1,5 +1,7 @@
 # Media Panel Devtool Web Extension for Firefox
 
+https://addons.mozilla.org/en-US/firefox/addon/devtools-media-panel/
+
 This a web extension adaption of the aboutmedia addon https://github.com/jyavenard/aboutmedia
 
 It creates a new 'Media' tab in the Firefox developer tools panel - currently supported in Firefox 54+
