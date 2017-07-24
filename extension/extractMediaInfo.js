@@ -71,7 +71,7 @@
         const waitForMediaElementInfo =
           v.mozRequestDebugInfo().then(debugInfo => {
             debugInfo = debugInfo.replace(/\t/g, '').split(/\n/g);
-            
+
             var JSONDebugInfo = "{";
             for(let g =0; g<debugInfo.length-1; g++){
               var pair = debugInfo[g].split(": ");
@@ -98,7 +98,20 @@
     });
   }
 
-  var media = document.getElementsByTagName("video");
+  function getVideos(doc) {
+    let videos = [];
+    for (let video of doc.getElementsByTagName("video")) {
+      videos.push(video);
+    }
+    let iframes = doc.getElementsByTagName('iframe');
+    for (let iframe of iframes) {
+      let ivideos = getVideos(iframe.contentDocument);
+      videos = videos.concat(ivideos);
+    }
+    return videos;
+  }
+
+  var media = getVideos(document);
   if (media.length > 0) {
     // Extract the info from all the media elements found and send them
     // to the browser.tabs.executeScript caller.
@@ -112,4 +125,3 @@
   // Send an empty result object to the browser.tabs.executeScript caller.
   return { url : document.location.href, mediaElements : [] };
 })();
-  
