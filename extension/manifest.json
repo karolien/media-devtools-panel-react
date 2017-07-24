@@ -2,18 +2,18 @@
 	"name": "Media Panel",
 	"short_name": "Media",
 	"version": "1.0",
-  "author": "Karolien Koorts",
-  "applications": {
-    "gecko": {
-      "strict_min_version": "54.0a1"
-    }
-  },
+	"author": "Karolien Koorts",
+	"applications": {
+		"gecko": {
+			"strict_min_version": "54.0a1"
+		}
+	},
 	"devtools_page": "devtools.html",
 	"description": "Devtools panel that displays information about media",
 	"icons": {
-    	"48": "images/icon-48.png",
+		"48": "images/icon-48.png",
 		"96": "images/icon-96.png"
-  	},
+	},
 	"background": {
 		"scripts": [ "background.js" ]
 	},
