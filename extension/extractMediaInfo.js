@@ -100,13 +100,15 @@
 
   function getVideos(doc) {
     let videos = [];
-    for (let video of doc.getElementsByTagName("video")) {
-      videos.push(video);
-    }
-    let iframes = doc.getElementsByTagName('iframe');
-    for (let iframe of iframes) {
-      let ivideos = getVideos(iframe.contentDocument);
-      videos = videos.concat(ivideos);
+    if (doc) {
+      for (let video of doc.getElementsByTagName("video")) {
+        videos.push(video);
+      }
+      let iframes = doc.getElementsByTagName('iframe');
+      for (let iframe of iframes) {
+        let ivideos = getVideos(iframe.contentDocument);
+        videos = videos.concat(ivideos);
+      }
     }
     return videos;
   }
