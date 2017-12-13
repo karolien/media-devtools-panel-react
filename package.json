@@ -9,7 +9,8 @@
     "envify": "^4.1.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-editable-json-tree": "^1.6.0",
+    "react-json-view": "^1.12.0",
+    "react-virtualized": "^9.9.0",
     "uglify-js": "^3.0.27",
     "uglifyify": "^4.0.3",
     "watchify": "^3.9.0"

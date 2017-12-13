@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8"> 
-</head>
-<body>
-	<fieldset>
-		<label for="rangeVal">Auto Refresh Rate:</label>
-		<input type ="range" max="10" min="0" value = "1" step="1"
-			step="1" name="rangeVal" id="rangeVal">
-		</input>
-		<em id="rangeValLabel" style="font-style: normal;">1s</em>
-		<button type="button" id="autoRefresh">Start (A)</button>
-		<button type="button" id="manualRefresh">Refresh Now (R)</button>
-	</fieldset>
-	<div id='tree'></div>
-</body>
-<script src="bundle.js"></script>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="panel.css">
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<div id="panel"></div>
+	</body>
+	<script src="bundle.js"></script>
 </html>

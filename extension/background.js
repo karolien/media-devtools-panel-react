@@ -33,7 +33,12 @@ chrome.runtime.onConnect.addListener(function(port) {
                 value : JSON.stringify(results, null, 2)
               });
             })
-            .catch(err => { console.log(err.message); });
+            .catch(err => {
+              port.postMessage({
+                action : 'got-media-info-error',
+                value : err.toString()
+              });
+            });
           break;
       }
     }
